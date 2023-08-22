@@ -1,0 +1,374 @@
+<!DOCTYPE html5>
+<html leng="es"></html>
+<head>
+  <title>Cajero</title>
+  <!--meta-->
+  <meta charset="UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <!--Icons Bootstrap-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <!--Favicon-->
+  <link rel="icon" type="image/x-icons" href="./css/tarjeta.png">
+  <!--Bootstrap 5.2.1-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  <!--Vinculos-->
+  <link href="./css/StyleAtm.css" rel="stylesheet">
+  <script src="./src/app.js"></script>
+</head>
+<body onload="initApp()">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9">
+        <div class="cont_cajero text-center">
+          <h1>ATM</h1>
+          <hr/>
+          <main class="container-fluid text-center">
+            <div class="card mt-4 w-50 mx-auto">
+                
+                <div class="card-header">
+                    <h4>Registro Clientes</h4>
+                </div>
+                <div class="card-body">
+                    <form id="form-clientes" class="row g-3">
+                        <div class="col-md-6">
+                            <label for="id-cedula" class="form-label">Cedula</label>
+                            <input type="text" class="form-control" id="id-cedula" name="cedula">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="id-nombres" class="form-label">Nombres</label>
+                            <input type="text" name="nombres" class="form-control" id="id-nombres">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="id-apellidos" class="form-label">Apellidos</label>
+                            <input type="text" class="form-control" name="apellidos" id="id-apellidos" placeholder="">
+                        </div>
+                        <div class="col-12">
+                            <div class="text-end">
+                                <a href="#" class="btn btn-secondary">Regresar</a>
+                                <button class="btn btn-success">Registrarse</button>
+                            </div>
+                            
+                        </div>
+                    </form>
+                </div>
+            </div>
+   
+            
+            
+            
+        </main>
+        </main>
+        <div class="modal fade" id="modalCuentas" tabindex="-1">
+          <div class="modal-dialog modal-lg">
+              <form id="id-form-cuenta-bancaria" class="needs-validation" novalidate="">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Registrar nueva cuenta bancaria</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                          <div class="row g-2">
+                              <div class="col-sm-6">
+                                  <label for="id-numero-cuenta" class="form-label">N# Cuenta</label>
+                                  <input type="text" class="form-control" id="id-numero-cuenta" name="numero" placeholder="" value="" required="" readonly>
+                                  <div class="invalid-feedback">
+                                      Valid first name is required.
+                                  </div>
+                              </div>
+  
+                              <div class="col-sm-6">
+                                  <label for="id-numero-cuenta" class="form-label">Introduce una clave</label>
+                                  <input type="password" class="form-control" id="id-clave" name="clave" placeholder="" value="" >
+                                  <div class="invalid-feedback">
+                                      Valid first name is required.
+                                  </div>
+                              </div>
+  
+                              <div class="col-sm-6">
+                                  <label for="id-tipo-cuenta" class="form-label">Tipo de Cuenta</label>
+                                  <select name="tipoCuenta" id="id-tipo-cuenta" class="form-select" required>
+                                      <option value="AHORRO">AHORRO</option>
+                                      <option value="CORRIENTE">CORRIENTE</option>
+                                  </select>
+                                  <div class="invalid-feedback">
+                                      Valid last name is required.
+                                  </div>
+                              </div>
+                              <div class="col-sm-12">
+                                  <label for="id-cliente" class="form-label">Cliente (Cédula)</label>
+                                  <select name="cedula" id="id-cliente" class="form-select" required>
+                                      <!-- Fill options here with client cedulas -->
+                                  </select>
+                                  <div class="invalid-feedback">
+                                      Valid last name is required.
+                                  </div>
+                              </div>
+                              <div class="col-sm-6">
+                                  <label for="lastName" class="form-label">Fecha de Apertura</label>
+                                  <input type="date" class="form-control" id="id-fecha-apertura" name="fechaApertura"
+                                      placeholder="" value="" required="">
+                                  <div class="invalid-feedback">
+                                      Valid last name is required.
+                                  </div>
+                              </div>
+  
+                              <div class="col-sm-6">
+                                  <label for="id-saldo" class="form-label">Saldo</label>
+                                  <input type="number" class="form-control" id="id-saldo" name="saldo" aria-label="Amount (to the nearest dollar)">
+                                  <div class="invalid-feedback">
+                                      Valid last name is required.
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                          <button class="btn btn-success">Agregar</button>
+                      </div>
+                  </div>
+              </form>
+          </div>
+      </div>
+      <div class="modal fade" id="modalDeposito" tabindex="-1">
+          <div class="modal-dialog modal-lg">
+              <form id="id-form-deposito" class="needs-validation" novalidate="">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Depositar</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                          <div class="row g-2">
+                              <div class="col-sm-6">
+                                  <label for="id-monto" class="form-label">Monto</label>
+                                  <input type="number" class="form-control" id="id-monto" name="monto" aria-label="Amount (to the nearest dollar)">
+                                  <div class="invalid-feedback">
+                                      Valid last name is required.
+                                  </div>
+                              </div>
+                              <div class="col-sm-6">
+                                  <label for="id-numero-cuenta" class="form-label">N# Cuenta</label>
+                                  <input type="text" class="form-control" id="id-numero-cuenta" name="numero" placeholder="" value="" required="" >
+                                  <div class="invalid-feedback">
+                                      Valid first name is required.
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                          <button type="submit" class="btn btn-success">Depositar</button>
+                      </div>
+                  </div>
+              </form>
+          </div>
+      </div>
+      <div class="modal fade" id="modalRetiro" tabindex="-1">
+          <div class="modal-dialog modal-lg">
+              <form id="id-form-retiro" class="needs-validation" novalidate="">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Retiros</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                          <div class="row g-2">
+                              <div class="col-sm-6">
+                                  <label for="id-monto" class="form-label">Monto</label>
+                                  <input type="number" class="form-control" id="id-monto" name="monto" aria-label="Amount (to the nearest dollar)">
+                                  <div class="invalid-feedback">
+                                      Valid last name is required.
+                                  </div>
+                              </div>
+                              <div class="col-sm-6">
+                                  <label for="id-numero-cuenta" class="form-label">N# Cuenta</label>
+                                  <input type="text" class="form-control" id="id-numero-cuenta" name="numero" placeholder="" value="" required="" >
+                                  <div class="invalid-feedback">
+                                      Valid first name is required.
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                          <button type="submit" class="btn btn-success">Retirar</button>
+                      </div>
+                  </div>
+              </form>
+          </div>
+      </div>
+      <div class="modal fade" id="modalTransferir" tabindex="-1">
+          <div class="modal-dialog modal-lg">
+              <form id="id-form-transferir" class="needs-validation" novalidate="">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Transferir</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                          <div class="row g-2">
+                              <div class="col-sm-6">
+                                  <label for="id-monto" class="form-label">Monto</label>
+                                  <input type="number" class="form-control" id="id-monto" name="monto" aria-label="Amount (to the nearest dollar)">
+                                  <div class="invalid-feedback">
+                                      Valid last name is required.
+                                  </div>
+                              </div>
+                              <div class="col-sm-6">
+                                  <label for="id-numero-cuenta" class="form-label">N# Cuenta Origen</label>
+                                  <input type="text" class="form-control" id="id-numero-cuenta" name="cuentaOrigen" placeholder="" value="" required="" >
+                                  <div class="invalid-feedback">
+                                      Valid first name is required.
+                                  </div>
+                              </div>
+                              <div class="col-sm-6">
+                                  <label for="id-numero-cuenta" class="form-label">N# Cuenta destino</label>
+                                  <input type="text" class="form-control" id="id-numero-cuenta" name="cuentaDestino" placeholder="" value="" required="" >
+                                  <div class="invalid-feedback">
+                                      Valid first name is required.
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                          <button type="submit" class="btn btn-success">Transferir</button>
+                      </div>
+                  </div>
+              </form>
+          </div>
+      </div>
+      <div class="modal fade" id="modalConsultar" tabindex="-1">
+          <div class="modal-dialog modal-lg">
+              <form id="id-form-consultar" class="needs-validation" novalidate="">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Consultar Saldo</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                          <div class="row g-2">
+                              <div class="col-sm-6">
+                                  <label for="id-monto" class="form-label">N# Cuenta</label>
+                                  <input type="number" class="form-control" id="id-numero" name="numero" aria-label="Amount (to the nearest dollar)">
+                                  <div class="invalid-feedback">
+                                      Valid last name is required.
+                                  </div>
+                              </div>
+                              
+                              
+                          </div>
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                          <button type="button" id="btn-consultar" class="btn btn-success">Consultar Saldo</button>
+                      </div>
+                  </div>
+              </form>
+          </div>
+      </div>
+      <div class="modal fade" id="id-modal-respuesta" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+      tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalToggleLabel">Respuesta</h5>
+                  
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body" id="id-modal-body">
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              </div>
+          </div>
+      </div>
+  </div>
+        <hr/>
+        <div class="cont_btnb">
+        <div class="row">
+          
+          <div class="col-md-6">
+            <div class="btnb">
+              <ul>
+                <li class=""><a id="btnb1" href="#" role="button" onclick="adicionarPass('1')" class="btn btn-default btn-lg height_botones_tablero">1</a></li>
+                <li><a id="btnb2" href="#" role="button" onclick="adicionarPass('2')" class="btn btn-default btn-lg">2</a></li>
+                <li><a id="btnb3" href="#" role="button" onclick="adicionarPass('3')" class="btn btn-default btn-lg">3</a></li>
+                <li><a id="btnb4" href="#" role="button" onclick="adicionarPass('4')" class="btn btn-default btn-lg">4</a></li>
+                <li><a id="btnb5" href="#" role="button" onclick="adicionarPass('5')" class="btn btn-default btn-lg">5</a></li>
+                <li><a id="btnb6" href="#" role="button" onclick="adicionarPass('6')" class="btn btn-default btn-lg">6</a></li>
+                <li><a id="btnb7" href="#" role="button" onclick="adicionarPass('7')" class="btn btn-default btn-lg">7</a></li>
+                <li><a id="btnb8" href="#" role="button" onclick="adicionarPass('8')" class="btn btn-default btn-lg">8</a></li>
+                <li><a id="btnb9" href="#" role="button" onclick="adicionarPass('9')" class="btn btn-default btn-lg">9</a></li>
+                <li><a id="btnb0" href="#" role="button" onclick="adicionarPass('0')" class="btn btn-default btn-lg">0</a></li>
+                <li><a id="btnb0" href="#" role="button" onclick="adicionarPass('.')" class="btn btn-default btn-lg">.</a></li>
+                <li><a id="btnb0" href="#" role="button" onclick="adicionarPass('00')" class="btn btn-default btn-lg">00</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="btnbi">
+              <ul>
+                <li><button id="btnCrearCuenta" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modalCuentas">Crear Cuenta</button></li>
+                <li><button id="btnDeposito" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modalDeposito">Depositar</button></li>
+                <li><button id="btnRetiro" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modalRetiro">Retiros</button></li>
+                <li><button id="btnTransferir" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modalTransferir">Transferir</button></li>
+                <li><button id="btn-consultar-cuenta" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modalConsultar">Consultar Saldo</button></li>
+                <li><a type="button" class="btn btn-link">LIMPIAR</a></li>
+               
+               
+              </ul>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="box2">
+      </div>
+      <div class="tarjetaCredito">
+          <button id="button">Insertar Tarjeta</button>
+          <input type="text" id="entrada">
+          <img src="./css/tarjeta.png" id="img">
+          <script>
+              const Img = document.getElementById("img")
+              const Button = document.getElementById("button")
+              const Entrada = document.getElementById("entrada")
+
+              Button.addEventListener("click", function () {
+                  Img.classList.toggle("img2")
+                  Entrada.classList.toggle("entrada2")
+                  if(Img.classList.contains("img2")){
+                      Entrada.setAttribute("readonly","true")
+                      Button.classList.add("clicked")
+                      Button.textContent = "Retirar tarjeta"
+                  }
+                  else{
+                      Entrada.removeAttribute("readonly")
+                      Button.classList.remove("clicked")
+                      Button.textContent = "Insertar tarjeta"
+                  }
+              })
+              
+          </script>
+      </div>
+    </div>
+  </div>
+  </div>
+  <script>
+     const passwordInput = document.getElementById("id-monto");
+
+// Función para adicionar los dígitos al campo del password
+function adicionarPass(digit) {
+  if (passwordInput.value.length < 4) {
+    passwordInput.value += digit;
+  }
+}
+  </script>
+  <script type="module" src="./src/clientes.js"></script>
+  <script type="module" src="./src/app.js"></script>
+</body>

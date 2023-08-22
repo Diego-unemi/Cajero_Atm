@@ -1,0 +1,75 @@
+@startuml
+class Cliente {
+    cedula: string
+    nombre: string
+    apellidos:string
+    tarjetaCredito: TarjetaCredito
+}
+
+class TarjetaCredito {
+    numero: String
+    fechaExpiracion: String
+    saldoDisponible: float
+    cuentaBancaria: CuentaBancaria
+}
+
+class ConsorcioBancos {
+    bancos: string
+}
+
+class Banco {
+    id: int
+    nombre: String
+    ordenador: OrdenadorBanco
+}
+
+class OrdenadorBanco {
+    cuentasBancarias: string
+}
+
+class CuentaBancaria {
+    numeroCuenta: String
+    saldo: float
+}
+
+class Transaccion {
+    tipo: String
+    monto: float
+    fecha: String
+    cuentaOrigen: CuentaBancaria
+    cuentaDestino: CuentaBancaria
+}
+class EstacionCajero {
+    id: int
+}
+
+class CajeroAutomatico {
+    id: int
+    ubicacion: String
+    ordenadorCentral: OrdenadorCentral
+}
+
+class OrdenadorCentral {
+    transaccionesPendientes: Queue<Transaccion>
+}
+
+class CajeroHumano {
+    id: string
+}
+
+Cliente --> TarjetaCredito
+TarjetaCredito "1" --> "1" CuentaBancaria
+ConsorcioBancos --> "*" Banco
+Banco --> OrdenadorBanco
+OrdenadorBanco --> "*" CuentaBancaria
+CuentaBancaria --> Transaccion : cuentaOrigen
+CuentaBancaria --> Transaccion : cuentaDestino
+Transaccion --> EstacionCajero : cuentaOrigen
+EstacionCajero --> CajeroHumano
+EstacionCajero --> CajeroAutomatico
+CajeroAutomatico --> OrdenadorCentral
+OrdenadorCentral --> Transaccion : transaccionesPendientes
+
+@enduml
+
+

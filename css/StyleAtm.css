@@ -1,0 +1,331 @@
+
+#pantallas>#proceso2,#proceso3,#proceso4,#proceso5 {
+    display: none;
+}
+
+#nuevo_monto {
+    display: none;
+}
+
+/*body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0;
+    content: "";
+    width: 100%;
+    min-height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(blue,orange);
+
+}*/
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    width: 960px;
+    height: 800px;
+    background-color: #AAAAAA;
+}
+.col-md-9 {
+    flex: 0 0 auto;
+    width: 77%;
+}
+
+.cont_cajero {
+    margin: 33px;
+    padding: 30px;
+    background: #C0C0C0;
+    height: auto;
+    width: auto;
+    border: 10px solid #D6D6D6;
+}
+
+.cont_cajero .cajero .pantalla .contp hr {
+    clear: both;
+    visibility: hidden;
+}
+
+.cont_cajero .cajero {
+    padding: 40px;
+    background: #AAAAAA;
+    border: 1px solid #fff;
+    border-radius: 10px;
+}
+
+.cont_cajero .cajero .pantalla {
+    width: 300px;
+    height: 192px;
+    background: #A8C6FA;
+    margin-left: 95px;
+}
+
+.cont_cajero .cajero .pantalla .contp {
+    padding: 30px 10px 30px 10px;
+}
+.cont_cajero .cajero .pantalla .contp label {
+    font-size: 11px;
+    text-align: center;
+    align-items: center;
+}
+
+.cont_cajero .cajero .btn_der {
+    margin-top: -192;
+    float: right;
+    text-align: center;
+    margin-bottom: 15px;
+    margin-right: -5px;
+}
+
+.cont_cajero .cajero .btn_der ul {
+    list-style: none;
+}
+
+.cont_cajero .cajero .btn_der ul li {
+    margin-bottom: 13px;
+}
+
+.cont_cajero .cajero .btn_der ul li a {
+    width: 80px;
+}
+
+.cont_cajero .cajero .btn_izq {
+    text-align: center;
+    margin-left: -30px;
+    margin-bottom: 15px;
+    float: left;
+}
+
+.cont_cajero .cajero .btn_izq ul {
+    list-style: none;
+}
+
+.cont_cajero .cajero .btn_izq ul li {
+    margin-bottom: 13px;
+}
+
+.cont_cajero .cajero .btn_izq ul li a {
+    width: 80px;
+}
+
+.cont_cajero .cont_btnb {
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.cont_cajero .cont_btnb .btnb {
+    width: 212px;
+    height: auto;
+    padding: 10px 10px 0 10px;
+    background: #AAAAAA;
+}
+
+.cont_cajero .cont_btnb .btnb ul {
+    list-style: none;
+    padding: 0;
+}
+
+.cont_cajero .cont_btnb .btnb ul li {
+    display: inline-block;
+}
+
+.cont_cajero .cont_btnb .btnb ul li a {
+    width: 61px;
+    height: 61px;
+    margin-bottom: 9.5px;
+}
+
+.cont_cajero .cont_btnb .btnbi {
+    width: 170px;
+    height: auto;
+    padding: 10px 10px 0 10px;
+    background: #AAAAAA;
+}
+
+.cont_cajero .cont_btnb .btnbi ul {
+    padding-left: 0;
+}
+
+.cont_cajero .cont_btnb .btnbi ul li {
+    list-style: none;
+}
+
+.cont_cajero .cont_btnb .btnbi ul li a {
+    text-align: center;
+    width: 130px;
+    height: 61px;
+    margin-bottom: 9.5px;
+}
+
+#proceso2 {
+    width: 300px;
+    height: 192px;
+    background: #A8C6FA;
+    margin-left: 95px;
+    text-align: left;
+}
+
+#proceso2 .contp {
+    padding: 30px 10px 30px 10px;
+}
+
+#proceso2 .contp p {
+    font-size: 17px;
+    margin-bottom: 48px;
+}
+p{
+    margin-top: -23px;
+
+}
+.col-md-6 {
+    width: 50%;
+    float: left;
+}
+
+#proceso3 {
+    width: 300px;
+    height: 192px;
+    background: #A8C6FA;
+    margin-left: 95px;
+}
+
+#proceso3 .contp-der,
+.contp-izq {
+    padding: 30px 10px 3px 10px;
+}
+
+
+#proceso3 .contp-der p,
+.contp-izq p {
+    font-size: 17px;
+    font-weight: 5px;
+    margin-bottom: 48px;
+}
+
+#proceso4 {
+    width: 300px;
+    height: 192px;
+    background: #A8C6FA;
+    margin-left: 95px;
+}
+
+#proceso4 .contp {
+    padding: 30px 10px 30px 10px;
+}
+
+#proceso4 .contp label {
+    font-size: 13px;
+    font-weight: 5px;
+}
+
+#proceso5 {
+    width: 300px;
+    height: 192px;
+    background: #A8C6FA;
+    margin-left: 95px;
+}
+
+#proceso5 .contp {
+    padding: 30px 10px 30px 10px;
+}
+
+#proceso5 .contp label {
+    font-size: 13px;
+    font-weight: 5px;
+}
+
+.form-control {
+    display: block;
+    width: 75%;
+    padding: 0.160rem 0.50rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0.375rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+.atm{
+    margin-left: 1%;
+    margin-right: 1%;
+    padding: 0%;
+    display: flex;
+  }
+
+ /*tarjeta*/
+.box2{
+    background: #37718E;
+    width: 250px;
+    height: 600px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(87%,-50%);
+    margin: 33px;
+    padding: 30px;
+    border: 10px solid #D6D6D6;
+    border-radius: 10px;
+}
+div .tarjetaCredito {
+    width: 350px;
+    height: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(60%,-50%);
+}
+div img{
+    width: 100%;
+    height: 100%;
+    transition: 1s;
+}
+div .img2 {
+    width: 50%;
+    height: 50%;
+    transform: translate(25%,-50%);
+}
+.tarjetaCredito input{
+    background: none;
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-80%,160%);
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    transition: 1s;
+}
+div .entrada2 {
+    border: none;
+    outline: none;
+    font-size: 12px;
+    transform: translate(-110%,-260%);
+    width: 120px;
+    height: 2px;
+}
+div #button {
+    background-color: #61677A;
+    border: #272829 2px solid;
+    border-radius: 5px;
+    transform: translate(85%,-500%);
+    display: block;
+    cursor: pointer;
+    transition: 0.25s;
+}
+div #button:hover{
+    background-color: darkolivegreen;
+}
+div #button.clicked{
+    background-color: darkred;
+}
+div #button.clicked:hover{
+    background-color: darkolivegreen;
+}
